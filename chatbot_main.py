@@ -128,7 +128,7 @@ def chatbot(user_message, history):
 
 demo = gr.ChatInterface(
     fn=chatbot,
-    chatbot=gr.Chatbot(),
+    chatbot=gr.Chatbot(type="messages"),
     textbox=gr.Textbox(placeholder="Type here..."),
     title="iClothGenie Chatbot",
     description="Type 'Register', 'Login', 'Place Order', or 'Update Order' to begin.",
@@ -136,4 +136,4 @@ demo = gr.ChatInterface(
     type="messages"
 )
 
-demo.launch()
+demo.launch(server_name="0.0.0.0", server_port=10000, share=False)
